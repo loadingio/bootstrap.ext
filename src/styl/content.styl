@@ -1,0 +1,77 @@
+//- module
+
+.typeset
+  font-weight: font-body-weight
+  margin-bottom: 3rem
+  margin-top: 1rem
+  font-family: font-body
+  .row + p, .card + p
+    margin-top: 1.25em
+  .example
+    margin-bottom: 1.25rem
+    background: #f8f9fa
+    padding: 1.5rem
+    border-radius: .25rem
+  .row.example
+    margin-left: 0
+    margin-right: 0
+  .row .example, .card-footer .example
+    margin-bottom: 0
+  p
+    color: #444
+  p b
+    color: #000
+  p:last-child
+    margin-bottom: 0
+  h1,h2,h3,h4,h5,h6
+    font-family: font-head
+    font-weight: font-head-weight
+
+  h2[id], h3[id], h4[id], h5[id], h6[id]
+    &:before
+      display: block
+      content: ""
+      margin-top: -4rem
+      height: 4rem
+  h2
+    margin-top: 3.25rem
+  h3
+    margin-top: 2.5rem
+  h4, h5, h6
+    margin-top: 1.75rem
+
+  p
+    margin-bottom: 1.25rem
+
+.typeset.heading-contrast
+  h1
+    font-size: 3rem
+  h2
+    font-size: 2.25rem
+  h3
+    font-size: 1.5rem
+    margin-top: 2rem
+  h4
+    font-size: 1.25rem
+    margin-top: 1.5rem
+  h5
+    font-size: 1.125rem
+    margin-top: 1.5rem
+  h6
+    font-size: 1rem
+    margin-top: 1.5rem
+.typeset, .typeset.heading-contrast
+  h1:first-child, h2:first-child, h3:first-child, h4:first-child, h5:first-child, h6:first-child
+    margin-top: 0
+  .sect:not(:first-child)
+    &:before
+      display: block
+      content: ""
+      margin-top: -6rem
+      height: 6rem
+    & > h2
+      margin-top: 3.25rem
+    & > h3
+      margin-top: 2.5rem
+    & > h4, & > h5, & > h6
+      margin-top: 1.75rem

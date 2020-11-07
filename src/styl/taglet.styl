@@ -1,0 +1,38 @@
+//- module
+
+.with-taglet
+  position: relative
+.with-taglet .taglet, .with-taglet.after:after
+  position: absolute
+  content: " "
+  display: inline-block
+  margin: auto
+  border-radius: 3px
+  border: 1px solid currentColor
+  background: #fff
+  text-align: center
+
+  font-size: .6em
+  height: 1.5em
+  line-height: 1em
+  width: auto
+  padding: .2em .25em
+  &.two-line
+    height: 2.4em
+
+.with-taglet .taglet.right, .with-taglet.after.right:after
+  top: 0
+  bottom: 0
+  right: 0
+  transform: translate(50%,0)
+
+.with-taglet .taglet.left, .with-taglet.after.left:after
+  top: 0
+  bottom: 0
+  left: 0
+  transform: translate(-50%,0)
+
+.with-taglet .taglet.bottom, .with-taglet.after.bottom:after
+  left: 50%
+  bottom: 0
+  transform: translate(-50%,50%)

@@ -1,0 +1,68 @@
+//- module
+
+font-head = Oxygen, sans-serif
+font-head-weight = 700
+
+font-code = 'Roboto Mono', sans-serif
+font-code-weight = 300
+
+font-body = Roboto, sans-serif
+font-body-weight = 300
+
+color = {
+  red: #c7254e
+  green: #15b73e
+  blue: #337ab7
+  danger: #d9534f
+  warning: #f0ad4e
+  success: #5cb85c
+  primary: #337ab7
+  info: #5bc0de
+}
+
+/* z-index should not exceed z-range + z-base. not used currently */
+z-range = 100
+
+/* minimal z-index value for different type of widgets */
+z-base = {
+  notify: 5000
+  splash: 4000
+  modal:  3000
+  fixed:  2000
+  float:  1000
+  base:   1
+}
+
+/* z-index order in each type of widgets */
+z-order = {}
+z-order.notify = "min",
+  "mid",
+  "max"
+
+z-order.splash = "min",
+  loader,
+  "mid",
+  "max"
+
+z-order.modal = "min",
+  "mid",
+  "max"
+
+z-order.fixed = "min",
+  "mid",
+  "ldcp",
+  "max"
+
+z-order.float = "min",
+  hover-tip,
+  "mid",
+  closebtn,
+  "max"
+
+z-order.base = "min",
+  1,
+  2,
+  focus,
+  action,
+  "mid",
+  "max"

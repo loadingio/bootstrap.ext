@@ -1,0 +1,46 @@
+//- module
+
+.text-sm { font-size: .8em }
+.text-lg { font-size: 1.5em }
+.text-xl { font-size: 2em }
+
+.no-select
+  user-select: none
+
+.code-block
+  font-family: monospace
+  overflow-x: scroll
+  white-space: pre
+
+.clickable
+  cursor: pointer!important
+
+.underdash
+  border-bottom: 1px dashed currentColor
+
+.text-underline
+  text-decoration: underline
+
+.text-bg-clip
+  color: currentColor
+  -webkit-text-fill-color: transparent
+  -webkit-background-clip: text
+  /* following styles have to be set by user in the same order with 'path-to-your-bk-image' replaced
+  background-image: -webkit-linear-gradient(transparent, transparent), url(path-to-your-bk-image)
+  background-image: -o-linear-gradient(transparent, transparent)
+  */
+
+.text-shadow-sm
+  text-shadow: 0 .125rem .25rem rgba(0,0,0,.075)!important
+.text-shadow
+  text-shadow: 0 .5rem 1rem rgba(0,0,0,.15)!important
+.text-shadow-lg
+  text-shadow: 0 1rem 3rem rgba(0,0,0,.175)!important
+
+.line-height-1em { line-height:1em }
+
+a.disabled
+  pointer-events: none
+  cursor: not-allowed
+  color: #6c757d
+  opacity: .65

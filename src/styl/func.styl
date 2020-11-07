@@ -1,0 +1,15 @@
+/*
+  following update z-order and define export zindex function for easily calculating z-index value
+  for example:
+    .navbar { zidx('nav', 'navbar') }
+  yields
+    .navbar { z-index: 2001; }
+*/
+
+// split it after join them makes index work on plain string
+for k,v in z-order
+  z-order[k] = split(" ", join(" ", v))
+
+zidx(category, name)
+  z-index: index(z-order[category], name) + z-base[category]
+

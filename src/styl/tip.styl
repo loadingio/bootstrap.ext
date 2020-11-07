@@ -1,0 +1,138 @@
+//- module
+.btn.has-tips, .has-tips
+  position: relative
+  overflow: visible
+  cursor: pointer
+  .inner, .file
+    width: 100%
+    height: 100%
+    overflow: hidden
+    position: absolute
+    top: 0
+    left: 0
+  .hover-tip, .custom-tip
+    display: none
+    opacity: 0
+    z-index: -1
+    transition: all 0.5s linear
+    user-select: none
+
+.has-tips.manual:hover, .btn.has-tips.manual:hover
+  .hover-tip, .custom-tip
+    display: none
+    opacity: 0
+    z-index: -1
+ 
+.btn.has-tips:hover, .has-tips:hover, .has-tips.tip-on, .has-tips.tip-on.manual:hover
+  .hover-tip, .custom-tip
+    display: block
+    opacity: 1
+    zidx(float, 'hover-tip')
+
+.hover-tip.ghost, .cutom-tip.ghost
+  pointer-events: none
+
+.hover-tip
+  background: #000
+  border-radius: 3px
+  position: absolute
+  min-width: 100px
+  color: #fff
+  padding: .8em 1em
+  text-align: center
+  zidx(float, hover-tip)
+  &.tip-sm
+    line-height: 14px
+    font-size: .75em
+    min-width: 100px
+    padding: .6em .8em
+  a
+    color: #73baf7
+  &:before
+    width: 10px
+    height: 10px
+    position: absolute
+    background: #000
+    display: block
+    content: " "
+    transform: rotate(45deg)
+
+.hover-tip.tip-no-min-width
+  min-width: inherit!important
+
+.hover-tip.bottom, .hover-tip
+  transform: translateX(-50%)
+  top: 100%
+  left: 50%
+  margin: 5px 0 0
+  &:before
+    top: -5px
+    left: 50%
+    margin: 0 0 0 -5px
+
+.hover-tip.top
+  top: auto
+  bottom: 100%
+  margin: 0 0 5px 0
+  &:before
+    top: auto
+    bottom: -5px
+
+.hover-tip.right
+  transform: translateY(-50%)
+  top: 50%
+  left: 100%
+  margin: 0 0 0 5px
+  &:before
+    top: 50%
+    left: 2px
+    margin: -5px 0 0 -5px
+
+.hover-tip.left
+  transform: translateY(-50%)
+  top: 50%
+  right: 100%
+  left: auto
+  margin: 0 5px 0 0
+  &:before
+    top: 50%
+    right: 0px
+    left: auto
+    margin: -5px -5px 0 0
+
+.hover-tip.as-tag
+  padding: 2px
+  display: inline-block
+  left: 10px
+  transform: none
+  width: 80%
+  &:before
+    display: none
+
+.hover-tip.as-tag.top
+  border-radius: 5px 5px 0 0
+
+.hover-tip.tip-danger
+  background: color.danger
+  &:before
+    background: color.danger
+
+.hover-tip.tip-warning
+  background: color.warning
+  &:before
+    background: color.warning
+
+.hover-tip.tip-success
+  background: color.success
+  &:before
+    background: color.success
+
+.hover-tip.tip-info
+  background: color.info
+  &:before
+    background: color.info
+
+.hover-tip.tip-primary
+  background: color.primary
+  &:before
+    background: color.primary

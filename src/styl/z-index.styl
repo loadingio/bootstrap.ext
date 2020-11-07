@@ -1,0 +1,28 @@
+//- module
+
+.ld-over, .ld-over-inverse, .ld-over-full, .ld-over-full-inverse
+  &.running
+    & > .ld { z-index: zidx(splash, loader) }
+    &:before
+      opacity: 1
+      zidx(splash, 'min')
+      display: block
+
+.ldColorPicker
+  zidx(fixed, 'ldcp')
+
+.z-base
+  zidx('base',   'min')
+.z-float
+  zidx('float',  'min')
+.z-fixed
+  zidx('fixed',  'min')
+.z-modal
+  zidx('modal',  'min')
+.z-splash
+  zidx('splash', 'min')
+.z-notify
+  zidx('notify', 'min')
+// expect to use this for only one thing ( e.g., server is down ) in the whole site
+.z-max
+  z-index: 99999999!important

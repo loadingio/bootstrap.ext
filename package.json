@@ -1,0 +1,27 @@
+{
+  "author": "zbryikt",
+  "name": "bootstrap.ldui",
+  "license": "MIT",
+  "description": "bootstrap exension used by loading.io",
+  "version": "0.0.1",
+  "homepage": "https://github.com/loadingio/bootstrap.ldui",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/loadingio/bootstrap.ldui"
+  },
+  "engines": {
+    "node": ">=10.14.1",
+    "npm": ">=6.4.1"
+  },
+  "scripts": {
+    "start": "cd web; npx server"
+  },
+  "devDependencies": {
+    "LiveScript": ">=1.2.0",
+    "stylus": "^0.54.5",
+    "uglify-js": "=3.2.0",
+    "uglifycss": "0.0.29",
+    "template-text": "0.0.3",
+    "template": "github:zbryikt/template@2.0.0"
+  }
+}

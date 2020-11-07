@@ -1,0 +1,36 @@
+//- module
+
+input.form-control:focus { box-shadow:0 0 2px rgba(0,255,255,.5)!important; }
+.has-icon .form-control { padding-left: 2.375rem }
+.form-control-icon
+  visibility: hidden
+  position: absolute
+  zidx(base, "action") /* otherwise active input will cover icon? */
+  display: block
+  width: 2.375rem
+  height: 2.375rem
+  line-height: 2.375rem
+  text-align: center
+  color: #aaa
+.has-icon .form-control-icon
+  visibility: visible
+
+.form-control-local
+  height: calc(1.5em + .75em + 2px)!important
+  padding: .375em .75em!important
+  font-size: 1em!important
+
+.form-control-local-sm
+  height: calc(1.5em + .571428em + 2px)!important
+  padding: .25em .5em!important
+  font-size: .875em!important
+
+.form-control-local-lg
+  height: calc(1.5em + 0.8em + 2px)!important
+  padding: .5em 1em!important
+  font-size: 1.25em!important
+
+select.form-control.is-invalid, select.form-control.is-valid
+  // original value is .375em, which overlaps selectbox control sign.
+  // we move it slightly toward left to prevent this.
+  background-position: center right calc(.875em + .1875rem)
