@@ -1,4 +1,501 @@
-doctype html
-html
-  head
-  body
+extends /base.pug
+block vars
+  -
+    var meta = {
+      title: "CSS Component in Loading UI - Extension for Bootstrap 4.0 by Loading.io",
+      description: "bootstrap based, Pug powered UI framework developed and used by loading.io",
+      url: `${domain}/lib/css/`
+    };
+block body
+  .row.w-1200.rwd.m-auto
+    .col-md-9.typeset.heading-contrast
+      h1 CSS Classes
+      p This page shows the CSS class extensions we defined in loading UI. Bootstrap 4 provides lots of useful attribute-based classes, so we remove parts that could be customized by those classes from below definition.
+
+      h2#layout Layout
+      hr
+      p Classes for size and position.
+      ul
+        li #[b.text-danger w-1200] - 1200px wide
+        li #[b.text-danger w-1024] - 1024px wide #[span.text-muted.text-sm ( lg size for bootstrap )]
+        li #[b.text-danger w-768] - 768px wide #[span.text-muted.text-sm ( md size for bootstrap )]
+        li #[b.text-danger w-480] - 480px wide #[span.text-muted.text-sm ( sm size for bootstrap )]
+        li #[b.text-danger h-gr] - 61.8% tall #[span.text-muted.text-sm ( golden ratio )]
+        li #[b.text-danger vh-75] - 75vh tall
+        li #[b.text-danger vh-50] - 50vh tall
+        li #[b.text-danger vh-25] - 25vh tall
+        li #[b.text-danger vh-gr] - 61.8vh tall #[span.text-muted.text-sm ( golden ratio )]
+        li #[b.text-danger vertical-center] - center any elements inside this element.
+        li #[b.text-danger rwd] - force block collapse when viewport is smaller.
+        li #[b.text-danger rounded-xl] - 1rem border radius
+        li
+          span #[b.text-danger sticky] - shorthand for position sticky. should custom top manually ( default 80px).
+          br
+          span demo as the scrollspy in the right or this page.
+      .row.example.align-items-center
+        .col-md
+          .code-block.
+            &lt;div class="#[b.text-danger vertical-center]"&gt;
+              &lt;div&gt;
+                centered inside container
+              &lt/div&gt;
+            &lt/div&gt;
+        .col-md
+          .card.bg-dark.text-light(style="height:100px"): .card-body
+            .vertical-center
+              div centered inside container
+      h3#aspect-ratio Aspect Ratio
+      p Use #[code aspect-ratio] and one of following ratio to maintain a block's aspect ratio:
+      ul
+        li #[b.text-danger ratio-1by1] - 1:1
+        li #[b.text-danger ratio-4by3] - 4:3
+        li #[b.text-danger ratio-3by2] - 3:2
+        li #[b.text-danger ratio-16by9] - 16:9
+        li #[b.text-danger ratio-2by1] - 2:1
+      p The block should be wrapped by another block which controls the width of it. div inside this block will be absolutely positioned and 100% in width ane height. Use #[code text-center] and #[code vertical-center] if you want to place content in the middle.
+      .row.text-white.font-weight-bold.mb-4
+        .col-md: .aspect-ratio.ratio-1by1.bg-dark: .text-center.vertical-center 1:1
+        .col-md: .aspect-ratio.ratio-4by3.bg-dark: .text-center.vertical-center 4:3
+        .col-md: .aspect-ratio.ratio-3by2.bg-dark: .text-center.vertical-center 3:2
+        .col-md: .aspect-ratio.ratio-16by9.bg-dark: .text-center.vertical-center 16:9
+        .col-md: .aspect-ratio.ratio-2by1.bg-dark: .text-center.vertical-center 2:1
+      .row.example.align-items-center
+        .col-md
+          .code-block.
+            &lt;div style="width:200px"&gt;
+              &lt;div class="#[b.text-danger aspect-ratio ratio-4by3]"&gt;
+                &lt;div class="vertical-center text-center"&gt;
+                  Hello World!
+                &lt;/div&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;
+        .col-md: div: .aspect-ratio.ratio-2by1(style="background:#fff"): .vertical-center.text-center Hello World!
+
+      h2#separator Separator
+      hr
+      p horizontal lines. Use spacing utility ( my-* ) to tweak gap between them.
+      ul.mb-4
+        li #[b.text-danger sep] - basic separator. identical to hr
+        li #[b.text-danger sep-dashed] - dashed separator
+        li #[b.text-danger sep-light] - light separator
+        li #[b.text-danger sep-dark] - dark separator
+        li #[b.text-danger sep-text] - separator with text.
+
+      .row.align-items-stretch
+        .col: .code-block.example.
+          &lt;div class="sep-dashed"&gt;&lt;/div&gt;
+          &lt;div class="sep-light"&gt;&lt;/div&gt;
+          &lt;div class="sep-dark"&gt;&lt;/div&gt;
+          &lt;div class="sep-text"&gt;
+            &lt;span&gt; Your Text &lt;/span&gt;
+          &lt;/div&gt;
+        .col: .card.h-100: .card-body.vertical-center: .w-100
+          .sep.sep-dashed
+          .sep.sep-light
+          .sep.sep-dark
+          .sep.sep-text: span Your Text
+        .col: .card.bg-secondary.h-100.w-100: .card-body.vertical-center: .w-100
+          .sep.sep-dashed
+          .sep.sep-light
+          .sep.sep-dark
+          .sep.sep-text: span Your Text
+
+      h2#text Text
+      hr
+      p Classes related to text size and style.
+      ul
+        li #[b.text-danger text-sm] - smaller in size ( .8em )
+        li #[b.text-danger text-lg] - bigger in size ( 1.25em )
+        li #[b.text-danger text-xl] - yet bigger in size ( 1.75em )
+        li #[b.text-danger no-select] - shorthand for user-select: none
+        li #[b.text-danger clickable] - shorthand for user-select: none
+        li #[b.text-danger code-block] - for showing codes
+        li #[b.text-danger text-shadow] - add standard size text shadow
+        li #[b.text-danger text-shadow-sm] - add small size text shadow
+        li #[b.text-danger text-shadow-lg] - add large size text shadow
+      .row.align-items-center
+        .col-md-6
+          .code-block.example.
+            &lt;span class="#[b.text-danger text-sm]"&gt; I'm small &lt;/span&gt;
+            &lt;span&gt; Normal Size &lt;/span&gt;
+            &lt;span class="#[b.text-danger text-lg]"&gt; I'm big &lt;/span&gt;
+            &lt;span class="#[b.text-danger text-xl]"&gt; I'm huge &lt;/span&gt;
+            &lt;span class="#[b.text-danger no-select]"&gt; try selecting me &lt;/span&gt;
+            &lt;span class="#[b.text-danger clickable]"&gt; clickable text &lt;/span&gt;
+            &lt;div class="#[b.text-danger code] bg-light"&gt;
+              void main(int args, char* argv[]) {
+                printf("Hello World!\n"); return;
+              }
+            &lt/div&gt;
+        .col-md-6
+          .text-sm I'm small
+          span Normal Size
+          .text-lg I'm big
+          .text-xl I'm huge
+          .no-select try selecting me
+          .clickable clickable text
+          .code-block.bg-light(style="max-width:400px").
+            void main(int args, char* argv[]) {
+              printf("Hello World!\n"); return;
+            }
+
+      h2#avatar Avatar
+      hr
+      ul
+        li #[b.text-danger avatar] - default avatar, inline-block #[.avatar]
+        li #[b.text-danger avatar.avatar-lg] - large avatar #[.avatar.avatar-lg]
+        li #[b.text-danger avatar.avatar-sm] - small avatar #[.avatar.avatar-sm]
+
+      h2#tips Tips &amp; Taglets
+      hr
+      p Hint user with tags and popups. Tooltips are re-implemented in pure css.
+
+      h3 Tips
+      p Short texts popped up when users hover or interact with certain element.
+      ul
+        li #[b.text-danger has-tips] - indicate that there are tips in this element.
+        li #[b.text-danger has-tips.tip-on] - force tip to show
+        li #[b.text-danger has-tips.manual] - show tip only when tip-on is set.
+        li #[b.text-danger has-tips.tip-sm] - small tip
+        li #[b.text-danger hover-tip] - element to show when has-tips hovered or set tip-on
+        li #[b.text-danger hover-tip.bottom] - toward right. similar rules for right, left, top. default right if not specified
+        li #[b.text-danger hover-tip.ghost] - no mouse event on it. used for tips in list of has-tips elements.
+      .code-block.example.
+        &lt;div class="#[b.text-danger has-tips]"&gt;
+          &lt;div class="#[b.text-danger hover-tip bottom]"&gt;
+            Tips
+          &lt;/div&gt;
+        &lt;/div&gt;
+      .card: .card-body: .text-center
+        each ison in ["","tip-on"]
+          each type in ["","tip-sm"]
+            each dir in ["left","","bottom","top","right"]
+              .btn.btn-success.has-tips.m-3(class=ison)
+                span #{dir}#[br]#{type}
+                .hover-tip(class=type+" "+dir) hello #{dir} #{type} #{dir} #{type}
+            +nbr(2)
+          +nbr(2)
+        each color in ["tip-danger","tip-primary","tip-success", "tip-info", "tip-warning"]
+          .btn.btn-success.has-tips.m-3.tip-on
+            span #{color}
+            .hover-tip(class=color) hello #{color}
+        +nbr(4)
+      h3 Taglets
+      p Create small tag over buttons, list items, dropdown items, etc.
+      ul
+        li #[b.text-danger with-taglet] - indicate that a block contains taglet.
+        li #[b.text-danger taglet] - taglet. put short message inside. 
+        li #[b.text-danger taglet.right] - place taglet in the right
+        li #[b.text-danger taglet.left] - place taglet in the left
+      .code-block.example.
+        &lt;div class="#[b.text-danger with-taglet]"&gt;
+          &lt;div class="#[b.text-danger taglet right]"&gt;
+            Tips
+          &lt;/div&gt;
+        &lt;/div&gt;
+      .card: .card-body
+        .dropdown.mb-4.mx-auto.w-50
+          .btn.btn-outline-dark.btn-block.dropdown-toggle.with-taglet.pl-4(data-toggle="dropdown")
+            span Toggle
+            .taglet.text-dark.left PRO
+          .dropdown-menu
+            .dropdown-item.with-taglet Item 1 #[.taglet.right CC-BY]
+            .dropdown-item.with-taglet Item 2 #[.taglet.left CC0]
+            .dropdown-item Item 3
+            .dropdown-item.with-taglet Item 4 #[.taglet.right CC-BY]
+
+        .text-center
+          .btn.with-taglet.btn-success.mr-2.mb-4.pl-4 Download #[.taglet.text-dark.left PRO]
+          .btn.with-taglet.btn-success.mb-4.text-center.pr-4 Download #[.taglet.text-dark.right PRO]
+        .list-group.mb-4.w-75.mx-auto
+          a.list-group-item.list-group-item-action(href="#") Item 1
+          a.list-group-item.list-group-item-action(href="#") Item 2
+          a.list-group-item.list-group-item-action.with-taglet(href="#") Item 3 #[.taglet.right CC-BY]
+          a.list-group-item.list-group-item-action.with-taglet(href="#") Item 4 #[.taglet.right CC0]
+
+
+      h2#notify Notify
+      hr
+      p Notification. Use along with short messages to hint users about events or state changes. For important message, please use #[a(href="/lib/modal/") ldCover].
+      .row.align-items-center.example
+        .col-md: .code-block.
+          &lt;div class="#[b.text-danger ldNotify]"&gt;
+            &lt;div class="#[b.text-danger alert]"&gt;
+              Alert Content
+            &lt;/div&gt;
+          &lt;/div&gt;
+        .col-md.text-center: .btn.btn-primary(onclick="lda.css.fire()") Fire Notification
+
+      h2#closebtn Closebtn
+      hr
+      p Use along with .ldcv, .card or .alert. put in #[b.text-danger .ldcv > .base > .inner] or #[b.text-danger .card > .card-body]. There are 3 size variation: #[b.text-danger sm], #[b.text-danger lg] and #[b.text-danger xl].
+      .sep
+      .row.align-items-center
+        .col-md
+          .code-block.example.
+            &lt;!-- use with ldCover --&gt;
+            &lt;div class="ldcv"&gt;
+             &lt;div class="base"&gt;
+              &lt;div class="inner"&gt;
+               &lt;div class="closebtn"&gt;&lt;/div&gt;
+               ...
+              &lt;/div&gt;
+             &lt;/div&gt;
+            &lt;/div&gt;
+
+            &lt;!-- use with card --&gt;
+            &lt;div class="card"&gt;
+             &lt;div class="card-body"&gt;
+              &lt;div class="closebtn"&gt;&lt;/div&gt;
+              ...
+             &lt;/div&gt;
+            &lt;/div&gt;
+
+            &lt;!-- use with alert --&gt;
+            &lt;div class="alert alert-success"&gt;
+             &lt;div class="closebtn"&gt;&lt;/div&gt;
+             ...
+            &lt;/div&gt;
+
+        .col-md
+          .card.mb-2: .card-body.position-relative #[.closebtn] #[span closebtn.sm with card]
+          .card.mb-2 #[.closebtn.sm] #[.card-body.position-relative closebtn.sm with card]
+          .card.mb-2 #[.closebtn.lg] #[.card-body.position-relative closebtn.lg with card]
+          .alert.alert-success.mb-2 #[.closebtn] #[span closebtn with alert]
+          .btn.btn-primary.btn-block(onclick="modal.closebtn.toggle()") toggle ldCover modal
+          .ldcv.closebtn-demo.md
+            .base: .inner.card: .card-body
+              .closebtn.xl(data-ldcv-set="")
+              h3 closebtn.xl with ldcv
+
+      h2#protip Protip
+      hr
+      p Hint for pro features and provide link for users to subscribe
+
+      h3 Protip in Modal
+      .row.align-items-center
+        .col-md
+          .code-block.example.
+            &lt;div class="ldcv #[b.text-danger has-protip]"&gt;
+             &lt;div class="base"&gt;
+              &lt;div class="inner"&gt;
+                &lt;span class="#[b.text-danger protip]"&gt;
+                 ...
+                &lt;/span&gt;
+              &lt;/div&gt;
+             &lt;/div&gt;
+            &lt;/div&gt;
+
+        .col-md.text-center
+          .btn.btn-outline-dark(onclick="modal.protip.toggle()") Toggle Modal
+
+      .ldcv.has-protip.md: .base: .inner.card: .card-body
+        h3 This is a dummy modal
+        +nbr(3)
+        .alert.alert-success.protip Click here to upgrade #[.btn.btn-outline-success.mr-4 Upgrade]
+
+      h3 Protip in Dropdown
+      .row.align-items-center
+        .col-md
+          .code-block.example.
+            &lt;div class="dropdown #[b.text-danger has-protip]"&gt;
+             &lt;div class="dropdown-menu"&gt;
+              &lt;div class="inner"&gt;
+               &lt;div class="dropdown-item"&gt; ...
+               ...
+              &lt;/div&gt;
+              &lt;div class="#[b.text-danger protip]"&gt;
+               ...
+              &lt;/div&gt;
+             &lt;/div&gt;
+            &lt;/div&gt;
+
+        .col-md: .vertical-center.text-center
+          .dropdown.has-protip
+            .btn.btn-outline-primary.dropdown-toggle(data-toggle="dropdown") Choose
+            .dropdown-menu
+              .inner
+                each i in [1,2,3,4,5,6,7,8,9,10,11,12,13,14]
+                  .dropdown-item item #{i}
+              .protip.alert.alert-success Upgrade to Unlock All
+
+      h3 Protip in ldSlide
+      .row.align-items-center
+        .col-md
+          .code-block.example.
+            &lt;div class="#[b.text-danger has-tips]"&gt;
+             &lt;div class="#[b.text-danger hover-tip]"&gt;&lt;/div&gt;
+             &lt;div class="ldrs"&gt;&lt;/div&gt;
+            &lt;/div&gt;
+            &lt;script&gt;
+             (new ldSlider({root: ...}))
+             .on("change", function(v) {
+               if(v > 50) { .... }
+             });
+            &lt;/script&gt;
+        .col-md: .vertical-center.text-center
+          .w-50.m-auto
+            .ldrs-pro-demo.form-group.has-tips.manual
+              label Width
+              .hover-tip.top.tip-sm Go Pro to Unlock
+              .ldrs
+
+      h2#formbutton Form & Button
+      hr
+      p Additional style and functions for forms and buttons.
+      ul
+        li #[b.text-danger has-icon] & #[b.text-danger form-control-icon] - add an icon in the input of a form-group.
+        li #[b.text-danger btn-upload] - upload button. auto hide the contained input element.
+        li #[b.text-danger btn-radio] - button with radio button. useful with btn-group
+        li #[b.text-danger btn-color] - button for color picker.
+
+      .code-block.example.
+        &lt;div class="form-group has-icon"&gt;
+          &lt;i class="i-close form-control-icon"&gt;&lt;/i&gt;
+          &lt;input class="form-control"/&gt;
+        &lt;/div&gt;
+      .example
+        .form-group.has-icon
+          label Some Input
+          i.i-close.form-control-icon
+          input.form-control
+      .row.align-items-center.mb-4
+        .col-md
+          .code-block.example.
+            &lt;div class="btn btn-primary #[b.text-danger btn-upload]"&gt;
+             #[b.text-danger &lt;input type="file"&gt;]
+             &lt;span&gt; upload ... &lt;/span&gt;
+            &lt;/div&gt;
+        .col-md: .vertical-center.text-center
+          .btn.btn-primary.btn-upload
+            input(type="file")
+            span upload ...
+
+      .row.align-items-center
+        .col-md
+          .code-block.example.
+            &lt;div class="btn-group"&gt;
+             &lt;div class="btn btn-primary #[b.text-danger btn-radio]"&gt;
+              Choice 1
+             &lt;/div&gt;
+             &lt;div class="btn btn-primary #[b.text-danger btn-radio]"&gt;
+              Choice 2
+             &lt;/div&gt;
+            &lt;/div&gt;
+        .col-md: .vertical-center.text-center
+          .btn-group
+            .btn.btn-primary.btn-radio.active(
+            onclick="this.classList.add('active');this.nextSibling.classList.remove('active');") Choice 1
+            .btn.btn-primary.btn-radio(
+            onclick="this.classList.add('active');this.previousSibling.classList.remove('active');") Choice 2
+      p Additionally, use form-control-local-* for font resizing with #[code em] instead of #[code rem]:
+      ul
+        li #[b.text-danger form-control-local]
+        li #[b.text-danger form-control-local-sm]
+        li #[b.text-danger form-control-local-lg]
+
+      h2#bg Background
+      hr
+      p Background style including transparency and pattern.
+      ul
+        li
+          b.text-danger bg-semi-light
+          span - semi transparent light background.
+          span.text-muted.text-sm.ml-1 / rgba(255,255,255.8)
+        li
+          b.text-danger bg-semi-dark
+          span - semi transparent dark background.
+          span.text-muted.text-sm.ml-1 / rgba(0,0,0,.6)
+        li #[b.text-danger bg-image] - belt background. users still have to specify their own background-image.
+        li #[b.text-danger bg-tile] - tile background ( repeatable ). use along with bg-image.
+        li #[b.text-danger bg-fixed] - fixed background.
+        li #[b.text-danger bg-portrait] - centered, none repeated background.
+        li #[b.text-danger bg-cover] - background size: cover
+        li #[b.text-danger bg-contain] - background size: contain
+      .ldcv.full.bg-image-demo1: .base: .inner
+        .closebtn.xl(data-ldcv-set="")
+        .bg-image.bg-tile(style="background-image:url(/assets/img/c/bg/cloud.svg)")
+        .w-100.h-100.vertical-center.text-center
+          .card.w-480.m-auto.shadow: .card-body.text-left
+            h3 bg-image + bg-tile
+            .sep.my-4
+            p Use #[b.text-danger bg-image] + #[b.text-danger bg-tile] to add vivid background pattern
+            .code-block.example.
+              &lt;div class="bg-image bg-tile"
+               style="background-image:url(tile.png)"&gt;
+              &lt;/div&gt;
+            p Best used with full screen container. Adjust vertical position by setting #[b.text-danger top] style.
+            .sep.my-4
+            .btn.btn-outline-primary(data-ldcv-set="") Dismiss
+
+      .ldcv.full.bg-image-demo2: .base: .inner
+        .closebtn.xl(data-ldcv-set="")
+        .bg-image(style="background-image:url(/assets/img/c/bg/valley.svg)")
+        .w-100.h-100.vertical-center.text-center
+          .card.w-480.m-auto.shadow: .card-body.text-left
+            h3 bg-image
+            .sep.my-4
+            p Use #[b.text-danger bg-image] to add vivid full sized background
+            .code-block.example.
+              &lt;div class="bg-image"
+               style="background-image:url(bk.svg)"&gt;
+              &lt;/div&gt;
+
+            p Best used with full screen container. Adjust vertical position by setting #[b.text-danger top] style.
+            .sep.my-4
+            .btn.btn-outline-primary(data-ldcv-set="") Dismiss
+
+      .text-center
+        .btn.btn-outline-primary.mr-2(onclick="modal.bg1.toggle()") Demo ( bg-image.bg-tile )
+        .btn.btn-outline-primary(onclick="modal.bg2.toggle()") Demo ( bg-image )
+
+      h2#shadow Shadow
+      hr
+      p Missing inset shadows in Bootstrap 4.
+      ul
+        li #[b.text-danger shadow-inset] - inset shadow
+        li #[b.text-danger shadow-inset-sm] - inset shadow ( small )
+        li #[b.text-danger shadow-inset-lg] - inset shadow ( large )
+      pre.bg-light.shadow-inset-lg.p-4.rounded-lg.
+        &lt;!-- This container is made with: --&gt;
+        &lt;pre class="bg-light #[b.text-danger .shadow-inset-lg] p-4 rounded-lg"&gt;
+          ...
+        &lt;/pre&gt;
+      h2#misc Misc
+      ul
+        li #[b.text-danger semi-opaque] - 0.5 opacity
+
+    .col-md-3
+      ul.list-group.sticky.d-none.d-md-block
+        a.list-group-item.list-group-item-action.text-capitalize(href="#",data-scrollto="#layout") layout
+        a.list-group-item.list-group-item-action.text-capitalize(href="#",data-scrollto="#separator") separator
+        a.list-group-item.list-group-item-action.text-capitalize(href="#",data-scrollto="#text") text
+        a.list-group-item.list-group-item-action.text-capitalize(href="#",data-scrollto="#avatar") avatar
+        a.list-group-item.list-group-item-action.text-capitalize(href="#",data-scrollto="#tips") tips &amp; taglets
+        a.list-group-item.list-group-item-action.text-capitalize(href="#",data-scrollto="#notify") notify
+        a.list-group-item.list-group-item-action.text-capitalize(href="#",data-scrollto="#closebtn") closebtn
+        a.list-group-item.list-group-item-action.text-capitalize(href="#",data-scrollto="#protip") protip
+        a.list-group-item.list-group-item-action.text-capitalize(href="#",data-scrollto="#formbutton") form & button
+        a.list-group-item.list-group-item-action.text-capitalize(href="#",data-scrollto="#bg") background
+        a.list-group-item.list-group-item-action.text-capitalize(href="#",data-scrollto="#shadow") shadow
+
+  +nbr(2)
+block script
+  script.
+    smoothScroll({offset:0});
+    var modal = {};
+    var slider = {};
+    modal.protip = new ldCover({root: ".ldcv.has-protip"});
+    modal.closebtn = new ldCover({root: ".ldcv.closebtn-demo"});
+    modal.bg1 = new ldCover({root: ".ldcv.bg-image-demo1"});
+    modal.bg2 = new ldCover({root: ".ldcv.bg-image-demo2"});
+
+    var f = ld$.find(document, '.ldrs-pro-demo', 0)
+    slider.ldrspro = new ldSlider({root: '.ldrs-pro-demo .ldrs', limitMax: 50});
+    slider.ldrspro.on("change", function(v) {
+      if(v >= 50) f.classList.add("tip-on"); else f.classList.remove("tip-on");
+    });
+
+  script: :lsc
+    ldc.register \css, <[notify]>, ({notify}) -> ldc.action fire: -> notify.send \danger, 'Alert Content'
+    ldc.app \css
