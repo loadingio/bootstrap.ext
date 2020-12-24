@@ -1,0 +1,40 @@
+extends /base.pug
+block body
+  .w-1024.mx-auto.rwd.my-4
+    .row
+      .col-md
+        .d-flex.mb-2.align-items-center
+          .mr-2 Toggle Hint On
+          .switch.switch-sm.mr-2
+          .btn.btn-sm.btn-outline-primary.mr-2 Hi
+          input.form-control.form-control-sm(style="width:10em",placeholder="input something...")
+        .d-flex.mb-2.align-items-center
+          .mr-2 Toggle Hint On
+          .switch.mr-2
+          .btn.btn-outline-primary.mr-2 Hi
+          input.form-control(style="width:10em",placeholder="input something...")
+        .d-flex.mb-2.align-items-center
+          .mr-2 Toggle Hint On
+          .switch.switch-lg.mr-2
+          .btn.btn-lg.btn-outline-primary.mr-2 Hi
+          input.form-control.form-control-lg(style="width:10em",placeholder="input something...")
+      .col-md
+        .d-flex.mb-2.align-items-center
+          .mr-2 Toggle Hint On
+          .switch.switch-sm.mr-2.on
+          .btn.btn-sm.btn-outline-primary.mr-2 Hi
+          input.form-control.form-control-sm(style="width:10em",placeholder="input something...")
+        .d-flex.mb-2.align-items-center
+          .mr-2 Toggle Hint On
+          .switch.mr-2.on
+          .btn.btn-outline-primary.mr-2 Hi
+          input.form-control(style="width:10em",placeholder="input something...")
+        .d-flex.mb-2.align-items-center
+          .mr-2 Toggle Hint On
+          .switch.switch-lg.mr-2.on
+          .btn.btn-lg.btn-outline-primary.mr-2 Hi
+          input.form-control.form-control-lg(style="width:10em",placeholder="input something...")
+block script
+  script: :lsc
+    Array.from(document.querySelectorAll('.switch')).map (n) ->
+      n.addEventListener \click, -> @classList.toggle \on
