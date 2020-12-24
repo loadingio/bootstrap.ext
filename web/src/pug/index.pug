@@ -461,6 +461,32 @@ block body
         &lt;pre class="bg-light #[b.text-danger .shadow-inset-lg] p-4 rounded-lg"&gt;
           ...
         &lt;/pre&gt;
+      h2#switch Switch
+      h3
+      p switch.
+      ul
+        li #[b.text-danger switch] - a switch
+        li #[b.text-danger switch-lg] - a larger switch
+        li #[b.text-danger .switch.on] - switch ( turned on )
+      .row.mb-4
+        .col-md
+          .d-flex.align-items-center
+            .mr-2 Toggle options
+            .switch
+        .col-md
+          .d-flex.align-items-center
+            .mr-2 Toggle options
+            .switch.on
+      .row
+        .col-md
+          .d-flex.align-items-center
+            .mr-2 Toggle options
+            .switch.switch-lg
+        .col-md
+          .d-flex.align-items-center
+            .mr-2 Toggle options
+            .switch.switch-lg.on
+
       h2#misc Misc
       ul
         li #[b.text-danger semi-opaque] - 0.5 opacity
@@ -478,6 +504,7 @@ block body
         a.list-group-item.list-group-item-action.text-capitalize(href="#",data-scrollto="#formbutton") form & button
         a.list-group-item.list-group-item-action.text-capitalize(href="#",data-scrollto="#bg") background
         a.list-group-item.list-group-item-action.text-capitalize(href="#",data-scrollto="#shadow") shadow
+        a.list-group-item.list-group-item-action.text-capitalize(href="#",data-scrollto="#switch") switch
 
   +nbr(2)
 block script
