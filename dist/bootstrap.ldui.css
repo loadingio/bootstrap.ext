@@ -46,7 +46,7 @@
   z-index: 1001;
 }
 .hover-tip.ghost,
-.cutom-tip.ghost {
+.custom-tip.ghost {
   pointer-events: none;
 }
 .hover-tip {
