@@ -1,4 +1,14 @@
-<!DOCTYPE html><html><head><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"><link rel="stylesheet" type="text/css" href="/assets/lib/bootstrap.ldui/dev/bootstrap.ldui.min.css"></head><body><div class="row w-1200 rwd m-auto"><div class="col-md-9 typeset heading-contrast"><h1>CSS Classes</h1><p>This page shows the CSS class extensions we defined in loading UI. Bootstrap 4 provides lots of useful attribute-based classes, so we remove parts that could be customized by those classes from below definition.</p><h2 id="layout">Layout</h2><hr><p>Classes for size and position.</p><ul><li><b class="text-danger">w-1200</b> - 1200px wide</li><li><b class="text-danger">w-1024</b> - 1024px wide <span class="text-muted text-sm">( lg size for bootstrap )</span></li><li><b class="text-danger">w-768</b> - 768px wide <span class="text-muted text-sm">( md size for bootstrap )</span></li><li><b class="text-danger">w-480</b> - 480px wide <span class="text-muted text-sm">( sm size for bootstrap )</span></li><li><b class="text-danger">h-gr</b> - 61.8% tall <span class="text-muted text-sm">( golden ratio )</span></li><li><b class="text-danger">vh-75</b> - 75vh tall</li><li><b class="text-danger">vh-50</b> - 50vh tall</li><li><b class="text-danger">vh-25</b> - 25vh tall</li><li><b class="text-danger">vh-gr</b> - 61.8vh tall <span class="text-muted text-sm">( golden ratio )</span></li><li><b class="text-danger">vertical-center</b> - center any elements inside this element.</li><li><b class="text-danger">rwd</b> - force block collapse when viewport is smaller.</li><li><b class="text-danger">rounded-xl</b> - 1rem border radius</li><li><span><b class="text-danger">sticky</b> - shorthand for position sticky. should custom top manually ( default 80px).</span><br><span>demo as the scrollspy in the right or this page.</span></li></ul><div class="row example align-items-center"><div class="col-md"><div class="code-block">&lt;div class="<b class="text-danger">vertical-center</b>"&gt;
+<!DOCTYPE html><html><head><link rel="stylesheet" type="text/css" href="/assets/lib/bootstrap/main/css/bootstrap.min.css"><link rel="stylesheet" type="text/css" href="/assets/lib/ldiconfont/main/ldif.min.css"><link rel="stylesheet" type="text/css" href="/assets/lib/@loadingio/bootstrap.ext/dev/index.min.css"><link rel="stylesheet" type="text/css" href="/assets/lib/ldcover/main/ldcv.min.css"><link rel="stylesheet" type="text/css" href="/assets/lib/ldslider/main/ldrs.min.css"><link rel="stylesheet" type="text/css" href="/assets/lib/ldnotify/main/ldnotify.min.css"><style type="text/css">html,
+body {
+  scroll-behavior: smooth;
+}
+@font-face {
+  font-family: 'ldi';
+  font-weight: normal;
+  font-style: normal;
+  src: url("assets/lib/ldiconfont/main/ldif.ttf") format('truetype');
+}
+</style></head><body><div class="row w-1200 rwd m-auto"><div class="col-md-9 typeset heading-contrast"><h1>CSS Classes</h1><p>This page shows the CSS class extensions we defined in loading UI. Bootstrap 4 provides lots of useful attribute-based classes, so we remove parts that could be customized by those classes from below definition.</p><h2 id="layout">Layout</h2><hr><p>Classes for size and position.</p><ul><li><b class="text-danger">w-1200</b> - 1200px wide</li><li><b class="text-danger">w-1024</b> - 1024px wide <span class="text-muted text-sm">( lg size for bootstrap )</span></li><li><b class="text-danger">w-768</b> - 768px wide <span class="text-muted text-sm">( md size for bootstrap )</span></li><li><b class="text-danger">w-480</b> - 480px wide <span class="text-muted text-sm">( sm size for bootstrap )</span></li><li><b class="text-danger">h-gr</b> - 61.8% tall <span class="text-muted text-sm">( golden ratio )</span></li><li><b class="text-danger">vh-75</b> - 75vh tall</li><li><b class="text-danger">vh-50</b> - 50vh tall</li><li><b class="text-danger">vh-25</b> - 25vh tall</li><li><b class="text-danger">vh-gr</b> - 61.8vh tall <span class="text-muted text-sm">( golden ratio )</span></li><li><b class="text-danger">vertical-center</b> - center any elements inside this element.</li><li><b class="text-danger">rwd</b> - force block collapse when viewport is smaller.</li><li><b class="text-danger">rounded-xl</b> - 1rem border radius</li><li><span><b class="text-danger">sticky</b> - shorthand for position sticky. should custom top manually ( default 80px).</span><br><span>demo as the scrollspy in the right or this page.</span></li></ul><div class="row example align-items-center"><div class="col-md"><div class="code-block">&lt;div class="<b class="text-danger">vertical-center</b>"&gt;
   &lt;div&gt;
     centered inside container
   &lt/div&gt;
@@ -111,27 +121,36 @@
 </div><p>Best used with full screen container. Adjust vertical position by setting <b class="text-danger">top</b> style.</p><div class="sep my-4"></div><div class="btn btn-outline-primary" data-ldcv-set="">Dismiss</div></div></div></div></div></div></div><div class="text-center"><div class="btn btn-outline-primary mr-2" onclick="modal.bg1.toggle()">Demo ( bg-image.bg-tile )</div><div class="btn btn-outline-primary" onclick="modal.bg2.toggle()">Demo ( bg-image )</div></div><h2 id="shadow">Shadow</h2><hr><p>Missing inset shadows in Bootstrap 4.</p><ul><li><b class="text-danger">shadow-inset</b> - inset shadow</li><li><b class="text-danger">shadow-inset-sm</b> - inset shadow ( small )</li><li><b class="text-danger">shadow-inset-lg</b> - inset shadow ( large )</li></ul><pre class="bg-light shadow-inset-lg p-4 rounded-lg">&lt;!-- This container is made with: --&gt;
 &lt;pre class="bg-light <b class="text-danger">.shadow-inset-lg</b> p-4 rounded-lg"&gt;
   ...
-&lt;/pre&gt;</pre><h2 id="switch">Switch</h2><h3></h3><p>switch.</p><ul><li><b class="text-danger">switch</b> - a switch</li><li><b class="text-danger">switch-lg</b> - a larger switch</li><li><b class="text-danger">.switch.on</b> - switch ( turned on )</li></ul><div class="row mb-4"><div class="col-md"><div class="d-flex align-items-center"><div class="mr-2">Toggle options</div><div class="switch"></div></div></div><div class="col-md"><div class="d-flex align-items-center"><div class="mr-2">Toggle options</div><div class="switch on"></div></div></div></div><div class="row"><div class="col-md"><div class="d-flex align-items-center"><div class="mr-2">Toggle options</div><div class="switch switch-lg"></div></div></div><div class="col-md"><div class="d-flex align-items-center"><div class="mr-2">Toggle options</div><div class="switch switch-lg on"></div></div></div></div><h2 id="misc">Misc</h2><ul><li><b class="text-danger">semi-opaque</b> - 0.5 opacity</li></ul></div><div class="col-md-3"><ul class="list-group sticky d-none d-md-block"><a class="list-group-item list-group-item-action text-capitalize" href="#" data-scrollto="#layout">layout</a><a class="list-group-item list-group-item-action text-capitalize" href="#" data-scrollto="#separator">separator</a><a class="list-group-item list-group-item-action text-capitalize" href="#" data-scrollto="#text">text</a><a class="list-group-item list-group-item-action text-capitalize" href="#" data-scrollto="#avatar">avatar</a><a class="list-group-item list-group-item-action text-capitalize" href="#" data-scrollto="#tips">tips &amp; taglets</a><a class="list-group-item list-group-item-action text-capitalize" href="#" data-scrollto="#notify">notify</a><a class="list-group-item list-group-item-action text-capitalize" href="#" data-scrollto="#closebtn">closebtn</a><a class="list-group-item list-group-item-action text-capitalize" href="#" data-scrollto="#protip">protip</a><a class="list-group-item list-group-item-action text-capitalize" href="#" data-scrollto="#formbutton">form & button</a><a class="list-group-item list-group-item-action text-capitalize" href="#" data-scrollto="#bg">background</a><a class="list-group-item list-group-item-action text-capitalize" href="#" data-scrollto="#shadow">shadow</a><a class="list-group-item list-group-item-action text-capitalize" href="#" data-scrollto="#switch">switch</a></ul></div></div><br><br><script>smoothScroll({offset:0});
-var modal = {};
-var slider = {};
-modal.protip = new ldCover({root: ".ldcv.has-protip"});
-modal.closebtn = new ldCover({root: ".ldcv.closebtn-demo"});
-modal.bg1 = new ldCover({root: ".ldcv.bg-image-demo1"});
-modal.bg2 = new ldCover({root: ".ldcv.bg-image-demo2"});
-
-var f = ld$.find(document, '.ldrs-pro-demo', 0)
-slider.ldrspro = new ldSlider({root: '.ldrs-pro-demo .ldrs', limitMax: 50});
-slider.ldrspro.on("change", function(v) {
-  if(v >= 50) f.classList.add("tip-on"); else f.classList.remove("tip-on");
+&lt;/pre&gt;</pre><h2 id="switch">Switch</h2><h3></h3><p>switch.</p><ul><li><b class="text-danger">switch</b> - a switch</li><li><b class="text-danger">switch-lg</b> - a larger switch</li><li><b class="text-danger">.switch.on</b> - switch ( turned on )</li></ul><div class="row mb-4"><div class="col-md"><div class="d-flex align-items-center"><div class="mr-2">Toggle options</div><div class="switch"></div></div></div><div class="col-md"><div class="d-flex align-items-center"><div class="mr-2">Toggle options</div><div class="switch on"></div></div></div></div><div class="row"><div class="col-md"><div class="d-flex align-items-center"><div class="mr-2">Toggle options</div><div class="switch switch-lg"></div></div></div><div class="col-md"><div class="d-flex align-items-center"><div class="mr-2">Toggle options</div><div class="switch switch-lg on"></div></div></div></div><h2 id="misc">Misc</h2><ul><li><b class="text-danger">semi-opaque</b> - 0.5 opacity</li></ul></div><div class="col-md-3"><ul class="list-group sticky d-none d-md-block"><a class="list-group-item list-group-item-action text-capitalize" href="#layout">layout</a><a class="list-group-item list-group-item-action text-capitalize" href="#separator">separator</a><a class="list-group-item list-group-item-action text-capitalize" href="#text">text</a><a class="list-group-item list-group-item-action text-capitalize" href="#avatar">avatar</a><a class="list-group-item list-group-item-action text-capitalize" href="#tips">tips &amp; taglets</a><a class="list-group-item list-group-item-action text-capitalize" href="#notify">notify</a><a class="list-group-item list-group-item-action text-capitalize" href="#closebtn">closebtn</a><a class="list-group-item list-group-item-action text-capitalize" href="#protip">protip</a><a class="list-group-item list-group-item-action text-capitalize" href="#formbutton">form & button</a><a class="list-group-item list-group-item-action text-capitalize" href="#bg">background</a><a class="list-group-item list-group-item-action text-capitalize" href="#shadow">shadow</a><a class="list-group-item list-group-item-action text-capitalize" href="#switch">switch</a></ul></div></div><br><br><script type="text/javascript" src="/assets/lib/@loadingio/ldc/main/ldc.min.js"></script><script type="text/javascript" src="/assets/lib/@loadingio/ldquery/main/ldq.min.js"></script><script type="text/javascript" src="/assets/lib/ldcover/main/ldcv.min.js"></script><script type="text/javascript" src="/assets/lib/ldslider/main/ldrs.min.js"></script><script type="text/javascript" src="/assets/lib/ldnotify/main/ldnotify.min.js"></script><script type="text/javascript" src="/assets/lib/bootstrap.native/main/bootstrap-native-v4.min.js"></script><script>var ref$, modal, slider, f;
+ref$ = [{}, {}], modal = ref$[0], slider = ref$[1];
+modal.protip = new ldcover({
+  root: ".ldcv.has-protip"
 });
-</script><script>// Generated by LiveScript 1.3.1
-ldc.register('css', ['notify'], function(arg$){
-  var notify;
-  notify = arg$.notify;
+modal.closebtn = new ldcover({
+  root: ".ldcv.closebtn-demo"
+});
+modal.bg1 = new ldcover({
+  root: ".ldcv.bg-image-demo1"
+});
+modal.bg2 = new ldcover({
+  root: ".ldcv.bg-image-demo2"
+});
+f = ld$.find(document, '.ldrs-pro-demo', 0);
+slider.ldrspro = new ldslider({
+  root: '.ldrs-pro-demo .ldrs',
+  limitMax: 50
+});
+slider.ldrspro.on('change', function(v){
+  if (v >= 50) {
+    return f.classList.add("tip-on");
+  } else {
+    return f.classList.remove("tip-on");
+  }
+});</script><script>ldc.register('css', [], function(){
   return ldc.action({
     fire: function(){
-      return notify.send('danger', 'Alert Content');
+      return ldnotify.send('danger', 'Alert Content');
     }
   });
 });
-ldc.app('css');</script><link rel="stylesheet" type="text/css" href="/assets/lib/bootstrap.ldui/dev/bootstrap.ldui.min.js"></body></html>
+ldc.app('css');</script></body></html>

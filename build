@@ -1,26 +1,19 @@
 #!/usr/bin/env bash
-mkdir -p dist/pug
+rm -rf dist
+mkdir -p dist
 
-echo "build src/ls/*.ls -> dist/bootstrap.ldui.js ..."
-npx lsc -cbp --no-header src/ls/ > dist/bootstrap.ldui.js
-echo "minifying bootstrap.ldui.js ..."
-npx uglifyjs dist/bootstrap.ldui.js > dist/bootstrap.ldui.min.js
-
-echo "build src/styl/index.styl -> dist/bootstrap.ldui.css ..."
-npx stylus -p src/styl/index.styl > dist/bootstrap.ldui.css
-echo "minifying bootstrap.ldui.css ..."
-npx uglifycss dist/bootstrap.ldui.css > dist/bootstrap.ldui.min.css
+echo "build src/styl/index.styl -> dist/bootstrap.css ..."
+npx stylus -p src/styl/index.styl > dist/index.css
+echo "minifying bootstrap.css ..."
+npx uglifycss dist/index.css > dist/index.min.css
 
 echo "build src/pug/index.pug to dist/index.pug ..."
 npx tt src/pug/index.pug -o dist/index.pug
 
-echo "copy separated pug files to dist/pug/ ..."
-cp src/pug/*.pug dist/pug/
-rm dist/pug/index.pug
-
 echo "deploy into local web ..."
-mkdir -p web/static/assets/lib/bootstrap.ldui/dev/
-cp -R dist/* web/static/assets/lib/bootstrap.ldui/dev/
+rm -rf web/static/assets/lib/@loadingio/bootstrap.ext/dev/
+mkdir -p web/static/assets/lib/@loadingio/bootstrap.ext/dev/
+cp -R dist/* web/static/assets/lib/@loadingio/bootstrap.ext/dev/
 
 echo "done."
 

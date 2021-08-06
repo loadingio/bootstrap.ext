@@ -6,6 +6,18 @@ block vars
       description: "bootstrap based, Pug powered UI framework developed and used by loading.io",
       url: `${domain}/lib/css/`
     };
+block head
+  style(type="text/css"): :stylus
+    html,body { scroll-behavior: smooth }
+
+    @font-face {
+      font-family: 'ldi';
+      font-weight: normal;
+      font-style: normal;
+      src: url('assets/lib/ldiconfont/main/ldif.ttf') format('truetype');
+    }
+
+    
 block body
   .row.w-1200.rwd.m-auto
     .col-md-9.typeset.heading-contrast
@@ -493,36 +505,33 @@ block body
 
     .col-md-3
       ul.list-group.sticky.d-none.d-md-block
-        a.list-group-item.list-group-item-action.text-capitalize(href="#",data-scrollto="#layout") layout
-        a.list-group-item.list-group-item-action.text-capitalize(href="#",data-scrollto="#separator") separator
-        a.list-group-item.list-group-item-action.text-capitalize(href="#",data-scrollto="#text") text
-        a.list-group-item.list-group-item-action.text-capitalize(href="#",data-scrollto="#avatar") avatar
-        a.list-group-item.list-group-item-action.text-capitalize(href="#",data-scrollto="#tips") tips &amp; taglets
-        a.list-group-item.list-group-item-action.text-capitalize(href="#",data-scrollto="#notify") notify
-        a.list-group-item.list-group-item-action.text-capitalize(href="#",data-scrollto="#closebtn") closebtn
-        a.list-group-item.list-group-item-action.text-capitalize(href="#",data-scrollto="#protip") protip
-        a.list-group-item.list-group-item-action.text-capitalize(href="#",data-scrollto="#formbutton") form & button
-        a.list-group-item.list-group-item-action.text-capitalize(href="#",data-scrollto="#bg") background
-        a.list-group-item.list-group-item-action.text-capitalize(href="#",data-scrollto="#shadow") shadow
-        a.list-group-item.list-group-item-action.text-capitalize(href="#",data-scrollto="#switch") switch
+        a.list-group-item.list-group-item-action.text-capitalize(href="#layout") layout
+        a.list-group-item.list-group-item-action.text-capitalize(href="#separator") separator
+        a.list-group-item.list-group-item-action.text-capitalize(href="#text") text
+        a.list-group-item.list-group-item-action.text-capitalize(href="#avatar") avatar
+        a.list-group-item.list-group-item-action.text-capitalize(href="#tips") tips &amp; taglets
+        a.list-group-item.list-group-item-action.text-capitalize(href="#notify") notify
+        a.list-group-item.list-group-item-action.text-capitalize(href="#closebtn") closebtn
+        a.list-group-item.list-group-item-action.text-capitalize(href="#protip") protip
+        a.list-group-item.list-group-item-action.text-capitalize(href="#formbutton") form & button
+        a.list-group-item.list-group-item-action.text-capitalize(href="#bg") background
+        a.list-group-item.list-group-item-action.text-capitalize(href="#shadow") shadow
+        a.list-group-item.list-group-item-action.text-capitalize(href="#switch") switch
 
   +nbr(2)
 block script
-  script.
-    smoothScroll({offset:0});
-    var modal = {};
-    var slider = {};
-    modal.protip = new ldCover({root: ".ldcv.has-protip"});
-    modal.closebtn = new ldCover({root: ".ldcv.closebtn-demo"});
-    modal.bg1 = new ldCover({root: ".ldcv.bg-image-demo1"});
-    modal.bg2 = new ldCover({root: ".ldcv.bg-image-demo2"});
+  script: :lsc
+    [modal, slider] = [{}, {}]
+    modal.protip = new ldcover root: ".ldcv.has-protip"
+    modal.closebtn = new ldcover root: ".ldcv.closebtn-demo"
+    modal.bg1 = new ldcover root: ".ldcv.bg-image-demo1"
+    modal.bg2 = new ldcover root: ".ldcv.bg-image-demo2"
 
-    var f = ld$.find(document, '.ldrs-pro-demo', 0)
-    slider.ldrspro = new ldSlider({root: '.ldrs-pro-demo .ldrs', limitMax: 50});
-    slider.ldrspro.on("change", function(v) {
-      if(v >= 50) f.classList.add("tip-on"); else f.classList.remove("tip-on");
-    });
+    f = ld$.find(document, '.ldrs-pro-demo', 0)
+    slider.ldrspro = new ldslider root: '.ldrs-pro-demo .ldrs', limitMax: 50
+    slider.ldrspro.on \change, (v) ->
+      if v >= 50 => f.classList.add("tip-on") else f.classList.remove("tip-on")
 
   script: :lsc
-    ldc.register \css, <[notify]>, ({notify}) -> ldc.action fire: -> notify.send \danger, 'Alert Content'
+    ldc.register \css, <[]>, -> ldc.action fire: -> ldnotify.send \danger, 'Alert Content'
     ldc.app \css
