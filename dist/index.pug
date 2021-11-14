@@ -1,29 +1,30 @@
 //- load script / css without worrying about loading them multiple times.
-- if(!scriptLoader) { scriptLoader = {url: {}, config: {}}; }
-- if(!decache) { decache = (version? "?v=" + version : ""); }
-mixin script(url,config)
-  - scriptLoader.config = (config ? config : {});
-  if !scriptLoader.url[url]
-    - scriptLoader.url[url] = true;
-    if /^https?:\/\/./.exec(url)
-      script(type="text/javascript",src=url,
-      defer=!!scriptLoader.config.defer,async=!!scriptLoader.config.async)
-    else
-      script(type="text/javascript",src=url + decache,
-      defer=!!scriptLoader.config.defer,async=!!scriptLoader.config.async)
+if !(libLoader || scriptLoader)
+  - if(!scriptLoader) { scriptLoader = {url: {}, config: {}}; }
+  - if(!decache) { decache = (version? "?v=" + version : ""); }
+  mixin script(url,config)
+    - scriptLoader.config = (config ? config : {});
+    if !scriptLoader.url[url]
+      - scriptLoader.url[url] = true;
+      if /^https?:\/\/./.exec(url)
+        script(type="text/javascript",src=url,
+        defer=!!scriptLoader.config.defer,async=!!scriptLoader.config.async)
+      else
+        script(type="text/javascript",src=url + decache,
+        defer=!!scriptLoader.config.defer,async=!!scriptLoader.config.async)
 
-- if(!cssLoader) { cssLoader = {url: {}}; }
-mixin css(url,config)
-  - cssLoader.config = (config ? config : {});
-  if !cssLoader.url[url]
-    - cssLoader.url[url] = true;
-    link(rel="stylesheet",type="text/css",href=url + decache)
+  - if(!cssLoader) { cssLoader = {url: {}}; }
+  mixin css(url,config)
+    - cssLoader.config = (config ? config : {});
+    if !cssLoader.url[url]
+      - cssLoader.url[url] = true;
+      link(rel="stylesheet",type="text/css",href=url + decache)
 
-- if(!blockLoader) { blockLoader = {name: {}, config: {}}; }
-mixin block(name)
-  if !blockLoader.name[name]
-    - blockLoader.name[name] = true;
-    block
+  - if(!blockLoader) { blockLoader = {name: {}, config: {}}; }
+  mixin block(name)
+    if !blockLoader.name[name]
+      - blockLoader.name[name] = true;
+      block
 //- escape for json output to prevent xss
 - var escjson = function(obj) { return 'JSON.parse(unescape("' + escape(JSON.stringify(obj)) + '"))'; };
 //- escape for html output to prevent xss
@@ -34,7 +35,7 @@ mixin nbr(count)
   - for (var i = 0; i < count; i++)
     br
 - var b64img = {};
-- b64img.px1 = "data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAAAAAAALAAAAAABAAEAQAICRAEAOw=="
+- b64img.px1 = "data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEAAAAALAAAAAABAAEAAAIA"
 
 -
   var loremtext = {
