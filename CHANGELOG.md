@@ -1,5 +1,12 @@
 # Change Logs
 
+## v0.0.4
+
+ - add `style` field in `package.json`
+ - upgrade modules
+ - release with compact directory structure
+
+
 ## v0.0.3
 
  - add `g-*` for  `gap` of flexbox and grid layout.
