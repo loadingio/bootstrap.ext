@@ -1,5 +1,10 @@
 # Change Logs
 
+## v0.0.5
+
+ - add `_g-*` for partially flexbox gap polyfill
+
+
 ## v0.0.4
 
  - add `style` field in `package.json`

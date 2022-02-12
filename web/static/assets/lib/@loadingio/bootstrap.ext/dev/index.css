@@ -498,6 +498,66 @@ a.disabled {
 .g-4 {
   gap: 1.5em;
 }
+._g-1 {
+  --gap: 0.125em;
+}
+._g-2 {
+  --gap: 0.25em;
+}
+._g-3 {
+  --gap: 0.5em;
+}
+._g-4 {
+  --gap: 0.75em;
+}
+._g-1,
+._g-2,
+._g-3,
+._g-4 {
+  gap: 0;
+}
+._g-1 > *,
+._g-2 > *,
+._g-3 > *,
+._g-4 > * {
+  margin: 0 var(--gap);
+}
+._g-1 > *:first-child,
+._g-2 > *:first-child,
+._g-3 > *:first-child,
+._g-4 > *:first-child {
+  margin: 0 var(--gap) 0 0;
+}
+._g-1 > *:last-child,
+._g-2 > *:last-child,
+._g-3 > *:last-child,
+._g-4 > *:last-child {
+  margin: 0 0 0 var(--gap);
+}
+._g-1.flex-column,
+._g-2.flex-column,
+._g-3.flex-column,
+._g-4.flex-column {
+  gap: 0;
+}
+._g-1.flex-column > *,
+._g-2.flex-column > *,
+._g-3.flex-column > *,
+._g-4.flex-column > * {
+  margin: var(--gap) 0;
+}
+._g-1.flex-column > *:first-child,
+._g-2.flex-column > *:first-child,
+._g-3.flex-column > *:first-child,
+._g-4.flex-column > *:first-child {
+  margin: 0 0 var(--gap) 0;
+}
+._g-1.flex-column > *:last-child,
+._g-2.flex-column > *:last-child,
+._g-3.flex-column > *:last-child,
+._g-4.flex-column > *:last-child {
+  margin: var(--gap) 0 0 0;
+}
 @media (max-width: 1200px) {
   .w-1200.rwd {
     width: 90%;

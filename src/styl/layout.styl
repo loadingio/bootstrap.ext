@@ -19,6 +19,24 @@
 .g-3 { gap: 1em }
 .g-4 { gap: 1.5em }
 
+._g-1 { --gap: .125em }
+._g-2 { --gap: .25em }
+._g-3 { --gap: .5em }
+._g-4 { --gap: .75em }
+
+._g-1, ._g-2, ._g-3, ._g-4
+  gap: 0
+  & > * { margin: 0 var(--gap) }
+  & > *:first-child { margin: 0 var(--gap) 0 0 }
+  & > *:last-child { margin: 0 0 0 var(--gap) }
+
+._g-1.flex-column, ._g-2.flex-column, ._g-3.flex-column, ._g-4.flex-column
+  gap: 0
+  & > * { margin: var(--gap) 0 }
+  & > *:first-child { margin: 0 0 var(--gap) 0 }
+  & > *:last-child { margin: var(--gap) 0 0 0 }
+
+
 @media (max-width: 1200px) { .w-1200.rwd { width: 90%; margin: auto; } }
 @media (max-width: 1024px) { .w-1024.rwd { width: 90%; margin: auto; } }
 @media (max-width: 768px) { .w-768.rwd { width: 90%; margin: auto; } }
