@@ -1,5 +1,10 @@
 # Change Logs
 
+## v0.0.6
+
+ - fix `_g-*` for only-child scenario
+
+
 ## v0.0.5
 
  - add `_g-*` for partially flexbox gap polyfill
