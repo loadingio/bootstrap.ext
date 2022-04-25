@@ -7,3 +7,11 @@
 mixin nbr(count)
   - for (var i = 0; i < count; i++)
     br
+
+//- handy shortcut for anchor
+mixin a(href, newtab, download)
+  a(href=href,
+  target=(newtab?"_blank":false),
+  rel=(newtab?"noopener noreferrer":false),
+  download=(download?download:false))&attributes(attributes)
+    block

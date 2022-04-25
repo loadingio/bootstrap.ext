@@ -1,5 +1,10 @@
 # Change Logs
 
+## v0.0.7
+
+ - add `a` mixin for handy anchor with rel ( noopener + noreferrer ) attributes to prevent browser hijacking vulnerability
+
+
 ## v0.0.6
 
  - fix `_g-*` for only-child scenario

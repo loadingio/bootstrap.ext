@@ -34,6 +34,14 @@ if !(libLoader || scriptLoader)
 mixin nbr(count)
   - for (var i = 0; i < count; i++)
     br
+
+//- handy shortcut for anchor
+mixin a(href, newtab, download)
+  a(href=href,
+  target=(newtab?"_blank":false),
+  rel=(newtab?"noopener noreferrer":false),
+  download=(download?download:false))&attributes(attributes)
+    block
 - var b64img = {};
 - b64img.px1 = "data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEAAAAALAAAAAABAAEAAAIA"
 
