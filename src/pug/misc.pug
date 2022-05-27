@@ -2,6 +2,10 @@
 - var escjson = function(obj) { return 'JSON.parse(unescape("' + escape(JSON.stringify(obj)) + '"))'; };
 //- escape for html output to prevent xss
 - var eschtml = (function() { var MAP = { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&#34;', "'": '&#39;' }; var repl = function(c) { return MAP[c]; }; return function(s) { return s.replace(/[&<>'"]/g, repl); }; })();
+-
+  function ellipsis(str, len) {
+    return ((str || '').substring(0, len || 200) + (((str || '').length > (len || 200)) ? '...' : ''));
+  }
 
 //- add br x n
 mixin nbr(count)

@@ -3,7 +3,7 @@
   "name": "@loadingio/bootstrap.ext",
   "license": "MIT",
   "description": "bootstrap extension used by loading.io",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "style": "dist/index.min.css",
   "files": [
     "dist/**/*"
