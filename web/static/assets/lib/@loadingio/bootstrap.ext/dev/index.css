@@ -248,6 +248,20 @@
 .input-group .dropdown-menu {
   width: 100%;
 }
+.input-group.has-icon .input-group-append {
+  position: relative;
+}
+.input-group.has-icon .input-group-append > .input-group-icon {
+  position: absolute;
+  left: -1.75em;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  font-size: 0.75em;
+  height: min-content;
+  line-height: 1em;
+  z-index: 3;
+}
 .sep {
   margin: 1em auto;
   border-top: 1px solid rgba(0,0,0,0.1);
@@ -889,7 +903,7 @@ a.disabled {
 input.form-control:focus {
   box-shadow: 0 0 2px rgba(0,255,255,0.5) !important;
 }
-.has-icon .form-control {
+.form-group.has-icon .form-control {
   padding-left: 2.375rem;
 }
 .form-control-icon {
@@ -903,7 +917,7 @@ input.form-control:focus {
   text-align: center;
   color: #aaa;
 }
-.has-icon .form-control-icon {
+.form-group.has-icon .form-control-icon {
   visibility: visible;
 }
 .form-control-local {

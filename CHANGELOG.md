@@ -4,6 +4,8 @@
 
  - add `ellipsis` pug function
  - add `tip-fit` class
+ - add `has-icon` and `input-group-icon` auxiliary class in `input-group`.
+ - limit `has-icon` for `form-control` in `form-group` must be used along with `form-group`.
 
 
 ## v0.0.7

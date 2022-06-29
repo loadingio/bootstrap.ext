@@ -357,6 +357,7 @@ block body
       p Additional style and functions for forms and buttons.
       ul
         li #[b.text-danger has-icon] & #[b.text-danger form-control-icon] - add an icon in the input of a form-group.
+        li #[b.text-danger has-icon] & #[b.text-danger input-group-icon] - add an icon in the input of a input-group.
         li #[b.text-danger btn-upload] - upload button. auto hide the contained input element.
         li #[b.text-danger btn-radio] - button with radio button. useful with btn-group
         li #[b.text-danger btn-color] - button for color picker.
@@ -371,6 +372,22 @@ block body
           label Some Input
           i.i-close.form-control-icon
           input.form-control
+
+      .code-block.example.
+        &lt;div class="input-group has-icon"&gt;
+          &lt;input class="form-control"/&gt;
+          &lt;div class="input-group-append"&gt;
+            &lt;i class="i-close input-group-icon"&gt;&lt;i&gt;
+            &lt;div class="btn btn-primary"/&gt; OK &lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      .example
+        .input-group.has-icon
+          input.form-control
+          .input-group-append
+            i.i-close.input-group-icon
+            .btn.btn-primary OK
+
       .row.align-items-center.mb-4
         .col-md
           .code-block.example.
