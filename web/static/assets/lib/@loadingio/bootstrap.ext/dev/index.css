@@ -429,7 +429,8 @@
 .clickable {
   cursor: pointer !important;
 }
-.unclickable {
+.unclickable,
+.unclickable * {
   cursor: not-allowed !important;
 }
 .underdash {
