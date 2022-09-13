@@ -1,5 +1,10 @@
 # Change Logs
 
+## v0.0.10 (upcoming)
+
+ - make unclickable affect descendants
+
+
 ## v0.0.9
 
  - add `has-icon` and `input-group-icon` auxiliary class in `input-group`.
