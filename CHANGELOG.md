@@ -1,8 +1,9 @@
 # Change Logs
 
-## v0.0.10 (upcoming)
+## v0.0.10
 
  - make unclickable affect descendants
+ - add CSS variables for z index
 
 
 ## v0.0.9

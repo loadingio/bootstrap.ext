@@ -1,3 +1,12 @@
+:root {
+  --z-base: 1;
+  --z-float: 1000;
+  --z-fixed: 2000;
+  --z-modal: 3000;
+  --z-splash: 4000;
+  --z-notify: 5000;
+  --z-max: 99999999;
+}
 .btn.has-tips,
 .has-tips {
   position: relative;
@@ -910,7 +919,7 @@ input.form-control:focus {
 .form-control-icon {
   visibility: hidden;
   position: absolute;
-  z-index: 5;
+  z-index: 5 /* otherwise active input will cover icon? */;
   display: block;
   width: 2.375rem;
   height: 2.375rem;
@@ -962,7 +971,7 @@ pre {
 .ld-over-inverse.running > .ld,
 .ld-over-full.running > .ld,
 .ld-over-full-inverse.running > .ld {
-  z-index: z-index: 4001;;
+  z-index: 4001;
 }
 .ld-over.running:before,
 .ld-over-inverse.running:before,

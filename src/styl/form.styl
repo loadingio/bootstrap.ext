@@ -5,7 +5,7 @@ input.form-control:focus { box-shadow:0 0 2px rgba(0,255,255,.5)!important; }
 .form-control-icon
   visibility: hidden
   position: absolute
-  zidx(base, "action") /* otherwise active input will cover icon? */
+  z-index: zidx(base, "action") /* otherwise active input will cover icon? */
   display: block
   width: 2.375rem
   height: 2.375rem
