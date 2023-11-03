@@ -1,5 +1,11 @@
 # Change Logs
 
+## v0.0.11
+
+ - add `g-5` and `_g-5` for 3em gapping
+ - use css variables for font settings to make it possible to be overwritten
+
+
 ## v0.0.10
 
  - make unclickable affect descendants

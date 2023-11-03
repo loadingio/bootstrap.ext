@@ -6,6 +6,12 @@
   --z-splash: 4000;
   --z-notify: 5000;
   --z-max: 99999999;
+  --font-body: Roboto, sans-serif;
+  --font-head: Oxygen, sans-serif;
+  --font-code: 'Roboto Mono', sans-serif;
+  --font-body-weight: 300;
+  --font-head-weight: 700;
+  --font-code-weight: 300;
 }
 .btn.has-tips,
 .has-tips {
@@ -526,6 +532,9 @@ a.disabled {
 .g-4 {
   gap: 1.5em;
 }
+.g-5 {
+  gap: 3em;
+}
 ._g-1 {
   --gap: 0.125em;
 }
@@ -538,71 +547,84 @@ a.disabled {
 ._g-4 {
   --gap: 0.75em;
 }
+._g-5 {
+  --gap: 1.5em;
+}
 ._g-1,
 ._g-2,
 ._g-3,
-._g-4 {
+._g-4,
+._g-5 {
   gap: 0;
 }
 ._g-1 > *,
 ._g-2 > *,
 ._g-3 > *,
-._g-4 > * {
+._g-4 > *,
+._g-5 > * {
   margin-left: var(--gap);
   margin-right: var(--gap);
 }
 ._g-1 > *:first-child,
 ._g-2 > *:first-child,
 ._g-3 > *:first-child,
-._g-4 > *:first-child {
+._g-4 > *:first-child,
+._g-5 > *:first-child {
   margin-left: 0;
   margin-right: var(--gap);
 }
 ._g-1 > *:last-child,
 ._g-2 > *:last-child,
 ._g-3 > *:last-child,
-._g-4 > *:last-child {
+._g-4 > *:last-child,
+._g-5 > *:last-child {
   margin-left: var(--gap);
   margin-right: 0;
 }
 ._g-1 > *:only-child,
 ._g-2 > *:only-child,
 ._g-3 > *:only-child,
-._g-4 > *:only-child {
+._g-4 > *:only-child,
+._g-5 > *:only-child {
   margin-left: 0 !important;
   margin-right: 0 !important;
 }
 ._g-1.flex-column,
 ._g-2.flex-column,
 ._g-3.flex-column,
-._g-4.flex-column {
+._g-4.flex-column,
+._g-5.flex-column {
   gap: 0;
 }
 ._g-1.flex-column > *,
 ._g-2.flex-column > *,
 ._g-3.flex-column > *,
-._g-4.flex-column > * {
+._g-4.flex-column > *,
+._g-5.flex-column > * {
   margin-top: var(--gap);
   margin-bottom: var(--gap);
 }
 ._g-1.flex-column > *:first-child,
 ._g-2.flex-column > *:first-child,
 ._g-3.flex-column > *:first-child,
-._g-4.flex-column > *:first-child {
+._g-4.flex-column > *:first-child,
+._g-5.flex-column > *:first-child {
   margin-top: 0;
   margin-bottom: var(--gap);
 }
 ._g-1.flex-column > *:last-child,
 ._g-2.flex-column > *:last-child,
 ._g-3.flex-column > *:last-child,
-._g-4.flex-column > *:last-child {
+._g-4.flex-column > *:last-child,
+._g-5.flex-column > *:last-child {
   margin-top: var(--gap);
   margin-bottom: 0;
 }
 ._g-1.flex-column > *:only-child,
 ._g-2.flex-column > *:only-child,
 ._g-3.flex-column > *:only-child,
-._g-4.flex-column > *:only-child {
+._g-4.flex-column > *:only-child,
+._g-5.flex-column > *:only-child {
   margin-top: 0 !important;
   margin-bottom: 0 !important;
 }
@@ -786,10 +808,10 @@ a.disabled {
   }
 }
 .typeset {
-  font-weight: 300;
+  font-weight: var(--font-body-weight);
   margin-bottom: 3rem;
   margin-top: 1rem;
-  font-family: Roboto, sans-serif;
+  font-family: var(--font-body);
 }
 .typeset .row + p,
 .typeset .card + p {
@@ -824,8 +846,8 @@ a.disabled {
 .typeset h4,
 .typeset h5,
 .typeset h6 {
-  font-family: Oxygen, sans-serif;
-  font-weight: 700;
+  font-family: var(--font-head);
+  font-weight: var(--font-head-weight);
 }
 .typeset h2[id]:before,
 .typeset h3[id]:before,
@@ -951,8 +973,8 @@ select.form-control.is-valid {
 }
 html,
 body {
-  font-family: Roboto, sans-serif, sans-serif;
-  font-weight: 300;
+  font-family: var(--font-body), sans-serif;
+  font-weight: var(--font-body-weight);
 }
 h1,
 h2,
@@ -960,12 +982,12 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: Oxygen, sans-serif, sans-serif;
-  font-weight: 700;
+  font-family: var(--font-head), sans-serif;
+  font-weight: var(--font-head-weight);
 }
 pre {
-  font-family: 'Roboto Mono', sans-serif, monospace;
-  font-weight: 300;
+  font-family: var(--font-code), monospace;
+  font-weight: var(--font-code-weight);
 }
 .ld-over.running > .ld,
 .ld-over-inverse.running > .ld,
