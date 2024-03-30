@@ -1,5 +1,11 @@
 # Change Logs
 
+## v0.0.12
+
+ - set font-weight to `inherit` for form elements
+ - upgrade dev dependencies
+
+
 ## v0.0.11
 
  - add `g-5` and `_g-5` for 3em gapping
